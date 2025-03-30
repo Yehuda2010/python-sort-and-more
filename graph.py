@@ -26,3 +26,14 @@ class Graph:
                 if w not in checked:
                     self.dfs(w, checked)
     
+    def bfs(self, v):
+        if 0 <= v and v <= self.n - 1:
+            checked = []
+            queue = [v]
+            while queue:
+                cur = queue.pop(0)
+                if cur not in checked:
+                    print(cur)
+                    checked.append(cur)
+                    for w in self.edges[cur]:
+                        queue.append(w)
