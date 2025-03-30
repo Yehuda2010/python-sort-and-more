@@ -19,6 +19,8 @@ def main():
     g.dfs(0)
     print()
     g.bfs(0)
+    print()
+    print(g.distance(0,7))
 
 if __name__ == "__main__":
     main()

@@ -37,3 +37,18 @@ class Graph:
                     checked.append(cur)
                     for w in self.edges[cur]:
                         queue.append(w)
+    
+    def distance(self, u, v):
+        if (0 <= u and u <= self.n - 1) and (0 <= v and v <= self.n - 1):
+            dist = 0
+            checked = []
+            queue = [(u, dist)]
+            while queue:
+                cur, dist = queue.pop(0)
+                if cur not in checked:
+                    if cur == v:
+                        return dist
+                    checked.append(cur)
+                    for w in self.edges[cur]:
+                        queue.append((w, dist + 1))
+            return float('inf')
