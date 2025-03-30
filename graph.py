@@ -15,4 +15,5 @@ class Graph:
             print("numbers are not in range...")
     
     def print_edges(self):
-        print(self.edges)
+        for k, v in self.edges.items():
+            print(k, ":", v)
