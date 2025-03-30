@@ -17,3 +17,12 @@ class Graph:
     def print_edges(self):
         for k, v in self.edges.items():
             print(k, ":", v)
+    
+    def dfs(self, v, checked=[]):
+        if 0 <= v and v <= self.n - 1:
+            checked.append(v)
+            print(v)
+            for w in self.edges[v]:
+                if w not in checked:
+                    self.dfs(w, checked)
+    
